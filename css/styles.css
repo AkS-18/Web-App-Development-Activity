@@ -1,3 +1,4 @@
+
 /* =====================================
    1. CSS VARIABLES - WEBSITE THEME
 ===================================== */
@@ -33,9 +34,12 @@ body {
     line-height: 1.6;
 }
 
-h2 {
+h1, h2 {
     color: var(--primary);
     text-align: center;
+}
+
+h2 {
     margin-bottom: 20px;
 }
 
@@ -92,14 +96,13 @@ nav a:hover {
 
 #home {
     background: linear-gradient(135deg, #101B35, #4a7cbe);
-
     color: var(--white);
     text-align: center;
-
     padding: 100px 20px;
 }
 
 #home h1 {
+    color: var(--white);
     font-size: 42px;
     margin-bottom: 15px;
 }
@@ -112,15 +115,12 @@ nav a:hover {
 #home button {
     background-color: var(--accent);
     color: var(--primary);
-
     border: none;
     padding: 13px 25px;
     margin: 10px;
-
     border-radius: 6px;
     font-size: 16px;
     font-weight: bold;
-
     cursor: pointer;
     transition: 0.3s;
 }
@@ -209,10 +209,12 @@ td a:hover {
    7. BOOKING FORM
 ===================================== */
 
-#booking {
+#booking,
+.booking-container {
     background-color: var(--white);
+    max-width: 800px;
     padding: 40px;
-    margin: 30px;
+    margin: 40px auto;
     border-radius: 12px;
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
 }
@@ -223,19 +225,34 @@ form {
 }
 
 form label {
-    display: block;
+    display: inline-block;
     margin-bottom: 5px;
     font-weight: bold;
 }
 
 form input,
 form select {
-    width: 100%;
+    max-width: 100%;
     padding: 12px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 15px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="number"],
+form input[type="date"],
+form select {
+    width: 100%;
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+    width: auto;
+    margin-right: 5px;
 }
 
 form input:focus,
@@ -244,6 +261,8 @@ form select:focus {
     border-color: var(--primary);
 }
 
+form input[type="submit"],
+form input[type="reset"],
 form button {
     background-color: var(--primary);
     color: var(--white);
@@ -254,6 +273,8 @@ form button {
     cursor: pointer;
 }
 
+form input[type="submit"]:hover,
+form input[type="reset"]:hover,
 form button:hover {
     background-color: var(--accent);
     color: var(--primary);
@@ -267,10 +288,8 @@ form button:hover {
 aside {
     background-color: var(--primary);
     color: var(--white);
-
     padding: 30px;
     margin: 30px;
-
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
@@ -308,10 +327,8 @@ aside h3 {
     background-color: var(--white);
     padding: 20px;
     margin: 15px 0;
-
     border-left: 5px solid var(--accent);
     border-radius: 8px;
-
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
 }
 
@@ -354,7 +371,8 @@ footer {
     #matches,
     #booking,
     #mybookings,
-    #guidelines {
+    #guidelines,
+    .booking-container {
         padding: 20px;
         margin: 15px;
     }

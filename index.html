@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,18 +14,17 @@
     <!-- HEADER AND NAVIGATION BAR -->
 
     <header>
-
         <h2>IPL 2026</h2>
 
         <nav>
             <a href="#matches">Matches</a> |
-            <a href="booking.html">Book Ticket</a>
+            <a href="booking.html">Book Ticket</a> |
             <a href="#mybookings">My Bookings</a> |
             <a href="#guidelines">Guidelines</a>
         </nav>
-
     </header>
 
+    <!-- HOME SECTION -->
 
     <section id="home">
 
@@ -42,6 +42,7 @@
 
     </section>
 
+    <!-- ABOUT IPL SECTION -->
 
     <section id="about">
 
@@ -53,6 +54,8 @@
             Experience the excitement of live cricket and
             support your favourite teams.
         </p>
+
+        <p id="demo"></p>
 
         <h3>Popular IPL Teams</h3>
 
@@ -76,6 +79,7 @@
 
     </section>
 
+    <!-- MATCH SCHEDULE -->
 
     <section id="matches">
 
@@ -84,14 +88,12 @@
         <label for="teamFilter">Filter by Team:</label>
 
         <select id="teamFilter">
-
             <option value="all">All Teams</option>
             <option value="CSK">Chennai Super Kings</option>
             <option value="MI">Mumbai Indians</option>
             <option value="RCB">Royal Challengers Bengaluru</option>
             <option value="KKR">Kolkata Knight Riders</option>
             <option value="SRH">Sunrisers Hyderabad</option>
-
         </select>
 
         <br><br>
@@ -99,7 +101,6 @@
         <table border="1">
 
             <thead>
-
                 <tr>
                     <th>Match Number</th>
                     <th>Teams</th>
@@ -110,7 +111,6 @@
                     <th>VIP</th>
                     <th>Action</th>
                 </tr>
-
             </thead>
 
             <tbody>
@@ -134,7 +134,7 @@
                     <td>₹900</td>
                     <td>₹1800</td>
                     <td>₹3500</td>
-                    <td><a href="#booking">Book</a></td>
+                    <td><a href="booking.html">Book</a></td>
                 </tr>
 
                 <tr>
@@ -145,7 +145,7 @@
                     <td>₹700</td>
                     <td>₹1400</td>
                     <td>₹2800</td>
-                    <td><a href="#booking">Book</a></td>
+                    <td><a href="booking.html">Book</a></td>
                 </tr>
 
                 <tr>
@@ -156,16 +156,16 @@
                     <td>₹750</td>
                     <td>₹1600</td>
                     <td>₹3200</td>
-                    <td><a href="#booking">Book</a></td>
+                    <td><a href="booking.html">Book</a></td>
                 </tr>
 
             </tbody>
 
         </table>
 
-
     </section>
 
+    <!-- BOOKING SECTION -->
 
     <section id="booking">
 
@@ -176,13 +176,11 @@
             <label for="match">Select Match:</label>
 
             <select id="match" name="match">
-
                 <option value="">Choose Match</option>
                 <option>CSK vs MI</option>
                 <option>RCB vs KKR</option>
                 <option>MI vs KKR</option>
                 <option>SRH vs CSK</option>
-
             </select>
 
             <br><br>
@@ -190,11 +188,9 @@
             <label for="stand">Stand Category:</label>
 
             <select id="stand" name="stand">
-
                 <option>General</option>
                 <option>Premium</option>
                 <option>VIP</option>
-
             </select>
 
             <br><br>
@@ -229,24 +225,22 @@
 
     </section>
 
+    <!-- BOOKING SUMMARY -->
 
     <aside>
 
         <h2>Booking Summary</h2>
 
         <p>Match: Not Selected</p>
-
         <p>Stand Category: Not Selected</p>
-
         <p>Ticket Price: ₹0</p>
-
         <p>Quantity: 0</p>
 
         <h3>Total Amount: ₹0</h3>
 
     </aside>
 
-
+    <!-- MY BOOKINGS -->
 
     <section id="mybookings">
 
@@ -255,7 +249,6 @@
         <table border="1">
 
             <thead>
-
                 <tr>
                     <th>Booking ID</th>
                     <th>Match</th>
@@ -263,13 +256,9 @@
                     <th>Number of Tickets</th>
                     <th>Total Amount</th>
                 </tr>
-
             </thead>
 
             <tbody>
-
-
-
             </tbody>
 
         </table>
@@ -278,58 +267,52 @@
 
     </section>
 
-
+    <!-- STADIUM GUIDELINES -->
 
     <section id="guidelines">
 
         <h2>Stadium Guidelines</h2>
 
         <article>
-
             <h3>Ticket Verification</h3>
-
             <p>
                 Carry your valid ticket while entering
                 the stadium. Tickets will be verified
                 at the entrance.
             </p>
-
         </article>
 
         <article>
-
             <h3>ID Proof Requirement</h3>
-
             <p>
                 Visitors must carry a valid government-issued
                 identity proof for verification.
             </p>
-
         </article>
 
         <article>
-
             <h3>Prohibited Items</h3>
-
             <p>
                 Outside food, sharp objects, fireworks
                 and other restricted items are not allowed
                 inside the stadium.
             </p>
-
         </article>
 
     </section>
 
-    <footer>
+    <!-- FOOTER -->
 
+    <footer>
         <p>
             &copy; 2026 IPL Ticket Booking.
             All Rights Reserved.
         </p>
-
     </footer>
 
-</body>
+    <!-- JAVASCRIPT -->
 
+    <script src="app.js"></script>
+
+</body>
 </html>
