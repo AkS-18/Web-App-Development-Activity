@@ -185,9 +185,10 @@
 
             <br><br>
 
-            <label for="stand">Stand Category:</label>
+            <label for="category">Stand Category:</label>
 
-            <select id="stand" name="stand">
+            <select id="category" name="category">
+                <option value="">Choose Category</option>
                 <option>General</option>
                 <option>Premium</option>
                 <option>VIP</option>
@@ -195,9 +196,9 @@
 
             <br><br>
 
-            <label for="quantity">Number of Tickets:</label>
+            <label for="tickets">Number of Tickets:</label>
 
-            <input type="number" id="quantity" name="quantity" min="1" max="10">
+            <input type="number" id="tickets" name="tickets" min="1" max="10" value="1">
 
             <br><br>
 
@@ -223,22 +224,25 @@
 
         </form>
 
+        <!-- ACTIVITY 7: BOOKING SUMMARY CARD -->
+
+<aside id="bookingSummary">
+
+    <h2>Booking Summary</h2>
+
+    <p>Match: <span id="summaryMatch">Not selected</span></p>
+
+    <p>Stand Category: <span id="summaryCategory">Not selected</span></p>
+
+    <p>Number of Tickets: <span id="summaryQuantity">0</span></p>
+
+    <p>Price per Ticket: ₹<span id="summaryPrice">0</span></p>
+
+    <h3>Total Price: ₹<span id="summaryTotal">0</span></h3>
+
+</aside>
+
     </section>
-
-    <!-- BOOKING SUMMARY -->
-
-    <aside>
-
-        <h2>Booking Summary</h2>
-
-        <p>Match: Not Selected</p>
-        <p>Stand Category: Not Selected</p>
-        <p>Ticket Price: ₹0</p>
-        <p>Quantity: 0</p>
-
-        <h3>Total Amount: ₹0</h3>
-
-    </aside>
 
     <!-- MY BOOKINGS -->
 

@@ -95,3 +95,79 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
+
+/* =====================================
+   ACTIVITY 7 - LIVE BOOKING SUMMARY
+===================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Form controls
+    const matchSelect = document.getElementById("match");
+    const categorySelect = document.getElementById("category");
+    const ticketInput = document.getElementById("tickets");
+
+    // Summary card elements
+    const summaryMatch = document.getElementById("summaryMatch");
+    const summaryCategory = document.getElementById("summaryCategory");
+    const summaryQuantity = document.getElementById("summaryQuantity");
+    const summaryPrice = document.getElementById("summaryPrice");
+    const summaryTotal = document.getElementById("summaryTotal");
+
+    // Stop if this page has no summary card (e.g. booking.html)
+    if (!matchSelect || !categorySelect || !ticketInput || !summaryMatch) {
+        return;
+    }
+
+    // Prices per match and stand (same as the schedule table)
+    const ticketPrices = {
+        "CSK vs MI":   { General: 800, Premium: 1500, VIP: 3000 },
+        "RCB vs KKR":  { General: 900, Premium: 1800, VIP: 3500 },
+        "MI vs KKR":   { General: 700, Premium: 1400, VIP: 2800 },
+        "SRH vs CSK":  { General: 750, Premium: 1600, VIP: 3200 }
+    };
+
+    function updateBookingSummary() {
+
+        const match = matchSelect.value;
+        const category = categorySelect.value;
+
+        // Keep quantity between 1 and 10
+        let quantity = parseInt(ticketInput.value) || 0;
+        quantity = Math.min(Math.max(quantity, 0), 10);
+
+        const price =
+            (ticketPrices[match] && ticketPrices[match][category]) || 0;
+
+        summaryMatch.textContent = match || "Not selected";
+        summaryCategory.textContent = category || "Not selected";
+        summaryQuantity.textContent = quantity;
+        summaryPrice.textContent = price.toLocaleString("en-IN");
+        summaryTotal.textContent = (price * quantity).toLocaleString("en-IN");
+    }
+
+    // Change events -> update summary + toast
+    matchSelect.addEventListener("change", function () {
+        updateBookingSummary();
+        showToast("Match selected: " + (matchSelect.value || "none"));
+    });
+
+    categorySelect.addEventListener("change", function () {
+        updateBookingSummary();
+        showToast("Stand category updated!");
+    });
+
+    ticketInput.addEventListener("change", function () {
+        if (ticketInput.value > 10) ticketInput.value = 10;
+        if (ticketInput.value < 1) ticketInput.value = 1;
+        updateBookingSummary();
+        showToast("Ticket quantity updated!");
+    });
+
+    // Live update while typing (no toast, so no spam)
+    ticketInput.addEventListener("input", updateBookingSummary);
+
+    // Initial state
+    updateBookingSummary();
+});

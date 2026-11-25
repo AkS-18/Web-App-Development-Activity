@@ -183,7 +183,7 @@ th {
 td {
     padding: 13px;
     text-align: center;
-    border: 1px solid #ddd;
+    border: 1px solid #000000;
 }
 
 tbody tr:hover {
@@ -216,7 +216,7 @@ td a:hover {
     padding: 40px;
     margin: 40px auto;
     border-radius: 12px;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 3px 12px rgba(36, 203, 17, 0.08);
 }
 
 form {
@@ -309,7 +309,7 @@ aside h3 {
     padding: 40px;
     margin: 30px;
     border-radius: 12px;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 3px 12px rgba(211, 17, 17, 0.08);
 }
 
 
