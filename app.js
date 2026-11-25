@@ -171,3 +171,77 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initial state
     updateBookingSummary();
 });
+
+/* =====================================
+   ACTIVITY 8 - RESPONSIVE LAYOUT + INTERACTION
+===================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // ----- Hamburger menu -----
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+
+    if (menuToggle && mainNav) {
+
+        menuToggle.addEventListener("click", function () {
+            mainNav.classList.toggle("open");
+        });
+
+        // Close the menu after tapping a link
+        mainNav.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                mainNav.classList.remove("open");
+            });
+        });
+    }
+
+    // ----- Filter match cards by team -----
+    const teamFilter = document.getElementById("teamFilter");
+    const matchCards = document.querySelectorAll(".match-card");
+
+    if (teamFilter) {
+
+        teamFilter.addEventListener("change", function () {
+
+            const selectedTeam = teamFilter.value;
+
+            matchCards.forEach(function (card) {
+
+                const teams = card.dataset.teams.split(" ");
+
+                if (selectedTeam === "all" || teams.includes(selectedTeam)) {
+                    card.classList.remove("hidden");
+                } else {
+                    card.classList.add("hidden");
+                }
+
+            });
+
+            showToast("Showing matches for: " + teamFilter.options[teamFilter.selectedIndex].text);
+        });
+    }
+
+    // ----- Grid / List view toggle -----
+    const matchGrid = document.getElementById("matchGrid");
+    const gridViewBtn = document.getElementById("gridViewBtn");
+    const listViewBtn = document.getElementById("listViewBtn");
+
+    if (matchGrid && gridViewBtn && listViewBtn) {
+
+        gridViewBtn.addEventListener("click", function () {
+            matchGrid.classList.remove("list-view");
+            gridViewBtn.classList.add("active");
+            listViewBtn.classList.remove("active");
+            showToast("Grid view enabled");
+        });
+
+        listViewBtn.addEventListener("click", function () {
+            matchGrid.classList.add("list-view");
+            listViewBtn.classList.add("active");
+            gridViewBtn.classList.remove("active");
+            showToast("List view enabled");
+        });
+    }
+
+});

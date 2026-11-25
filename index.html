@@ -14,15 +14,17 @@
     <!-- HEADER AND NAVIGATION BAR -->
 
     <header>
-        <h2>IPL 2026</h2>
+        <h2 class="logo">IPL 2026</h2>
+        
+        <button id="menuToggle" class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
 
-        <nav>
-            <a href="#matches">Matches</a> |
-            <a href="booking.html">Book Ticket</a> |
-            <a href="#mybookings">My Bookings</a> |
-            <a href="#guidelines">Guidelines</a>
-        </nav>
-    </header>
+    <nav id="mainNav">
+        <a href="#matches">Matches</a>
+        <a href="booking.html">Book Ticket</a>
+        <a href="#mybookings">My Bookings</a>
+        <a href="#guidelines">Guidelines</a>
+    </nav>
+</header>
 
     <!-- HOME SECTION -->
 
@@ -83,87 +85,84 @@
 
     <section id="matches">
 
-        <h2>IPL Match Schedule</h2>
+    <h2>IPL Match Schedule</h2>
 
-        <label for="teamFilter">Filter by Team:</label>
+    <div class="match-controls">
+        <div>
+            <label for="teamFilter">Filter by Team:</label>
+            <select id="teamFilter">
+                <option value="all">All Teams</option>
+                <option value="CSK">Chennai Super Kings</option>
+                <option value="MI">Mumbai Indians</option>
+                <option value="RCB">Royal Challengers Bengaluru</option>
+                <option value="KKR">Kolkata Knight Riders</option>
+                <option value="SRH">Sunrisers Hyderabad</option>
+            </select>
+        </div>
 
-        <select id="teamFilter">
-            <option value="all">All Teams</option>
-            <option value="CSK">Chennai Super Kings</option>
-            <option value="MI">Mumbai Indians</option>
-            <option value="RCB">Royal Challengers Bengaluru</option>
-            <option value="KKR">Kolkata Knight Riders</option>
-            <option value="SRH">Sunrisers Hyderabad</option>
-        </select>
+        <div class="view-toggle">
+            <button id="gridViewBtn" class="active">Grid View</button>
+            <button id="listViewBtn">List View</button>
+        </div>
+    </div>
 
-        <br><br>
+    <div id="matchGrid" class="match-grid">
 
-        <table border="1">
+        <div class="match-card" data-teams="CSK MI">
+            <span class="match-number">Match 1</span>
+            <h3>CSK vs MI</h3>
+            <p>10 April 2026, 7:30 PM</p>
+            <p>Chennai</p>
+            <ul class="price-list">
+                <li>General: ₹800</li>
+                <li>Premium: ₹1500</li>
+                <li>VIP: ₹3000</li>
+            </ul>
+            <a href="booking.html" class="book-btn">Book</a>
+        </div>
 
-            <thead>
-                <tr>
-                    <th>Match Number</th>
-                    <th>Teams</th>
-                    <th>Date &amp; Time</th>
-                    <th>Venue</th>
-                    <th>General</th>
-                    <th>Premium</th>
-                    <th>VIP</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
+        <div class="match-card" data-teams="RCB KKR">
+            <span class="match-number">Match 2</span>
+            <h3>RCB vs KKR</h3>
+            <p>12 April 2026, 7:30 PM</p>
+            <p>Bengaluru</p>
+            <ul class="price-list">
+                <li>General: ₹900</li>
+                <li>Premium: ₹1800</li>
+                <li>VIP: ₹3500</li>
+            </ul>
+            <a href="booking.html" class="book-btn">Book</a>
+        </div>
 
-            <tbody>
+        <div class="match-card" data-teams="MI KKR">
+            <span class="match-number">Match 3</span>
+            <h3>MI vs KKR</h3>
+            <p>15 April 2026, 3:30 PM</p>
+            <p>Mumbai</p>
+            <ul class="price-list">
+                <li>General: ₹700</li>
+                <li>Premium: ₹1400</li>
+                <li>VIP: ₹2800</li>
+            </ul>
+            <a href="booking.html" class="book-btn">Book</a>
+        </div>
 
-                <tr>
-                    <td>1</td>
-                    <td>CSK vs MI</td>
-                    <td>10 April 2026, 7:30 PM</td>
-                    <td>Chennai</td>
-                    <td>₹800</td>
-                    <td>₹1500</td>
-                    <td>₹3000</td>
-                    <td><a href="booking.html">Book</a></td>
-                </tr>
+        <div class="match-card" data-teams="SRH CSK">
+            <span class="match-number">Match 4</span>
+            <h3>SRH vs CSK</h3>
+            <p>18 April 2026, 7:30 PM</p>
+            <p>Hyderabad</p>
+            <ul class="price-list">
+                <li>General: ₹750</li>
+                <li>Premium: ₹1600</li>
+                <li>VIP: ₹3200</li>
+            </ul>
+            <a href="booking.html" class="book-btn">Book</a>
+        </div>
 
-                <tr>
-                    <td>2</td>
-                    <td>RCB vs KKR</td>
-                    <td>12 April 2026, 7:30 PM</td>
-                    <td>Bengaluru</td>
-                    <td>₹900</td>
-                    <td>₹1800</td>
-                    <td>₹3500</td>
-                    <td><a href="booking.html">Book</a></td>
-                </tr>
+    </div>
 
-                <tr>
-                    <td>3</td>
-                    <td>MI vs KKR</td>
-                    <td>15 April 2026, 3:30 PM</td>
-                    <td>Mumbai</td>
-                    <td>₹700</td>
-                    <td>₹1400</td>
-                    <td>₹2800</td>
-                    <td><a href="booking.html">Book</a></td>
-                </tr>
-
-                <tr>
-                    <td>4</td>
-                    <td>SRH vs CSK</td>
-                    <td>18 April 2026, 7:30 PM</td>
-                    <td>Hyderabad</td>
-                    <td>₹750</td>
-                    <td>₹1600</td>
-                    <td>₹3200</td>
-                    <td><a href="booking.html">Book</a></td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </section>
+</section>
 
     <!-- BOOKING SECTION -->
 
